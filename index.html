@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Benim Portföyüm</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0f0f0f;
+      color: white;
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 8%;
+      background: #171717;
+      position: sticky;
+      top: 0;
+    }
+
+    nav h2 {
+      margin: 0;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      margin-left: 20px;
+    }
+
+    .hero {
+      min-height: 85vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 30px;
+    }
+
+    .hero h1 {
+      font-size: 55px;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 20px;
+      color: #bdbdbd;
+    }
+
+    .btn {
+      margin-top: 20px;
+      display: inline-block;
+      padding: 15px 28px;
+      background: white;
+      color: black;
+      text-decoration: none;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+
+    .btn:hover {
+      transform: scale(1.08);
+    }
+
+    section {
+      padding: 70px 10%;
+    }
+
+    section h2 {
+      font-size: 35px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .kartlar {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .kart {
+      background: #1b1b1b;
+      padding: 25px;
+      border-radius: 15px;
+      text-align: center;
+      transition: 0.2s;
+    }
+
+    .kart:hover {
+      transform: translateY(-7px);
+    }
+
+    .portfoy img {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px;
+      background: #171717;
+      color: #aaa;
+    }
+
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 38px;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav>
+    <h2>Portföyüm</h2>
+
+    <div>
+      <a href="#hakkimda">Hakkımda</a>
+      <a href="#hizmetler">Hizmetler</a>
+      <a href="#portfoy">Portföy</a>
+      <a href="#iletisim">İletişim</a>
+    </div>
+  </nav>
+
+  <div class="hero">
+    <h1>Merhaba 👋</h1>
+    <p>Thumbnail tasarımı ve basit web siteleri hazırlıyorum.</p>
+
+    <a class="btn" href="#portfoy">
+      Çalışmalarımı Gör
+    </a>
+  </div>
+
+  <section id="hakkimda">
+    <h2>Hakkımda</h2>
+
+    <div class="kart">
+      <p>
+        YouTube içerik üreticileri için thumbnail tasarlıyorum
+        ve basit, modern web siteleri hazırlıyorum.
+      </p>
+    </div>
+  </section>
+
+  <section id="hizmetler">
+    <h2>Hizmetler</h2>
+
+    <div class="kartlar">
+
+      <div class="kart">
+        <h3>🎨 Thumbnail</h3>
+        <p>YouTube videoları için dikkat çekici küçük resimler.</p>
+      </div>
+
+      <div class="kart">
+        <h3>💻 Web Sitesi</h3>
+        <p>Kişisel veya küçük projeler için basit web siteleri.</p>
+      </div>
+
+      <div class="kart">
+        <h3>🖼️ Tasarım</h3>
+        <p>Banner ve basit sosyal medya tasarımları.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="portfoy">
+    <h2>Portföy</h2>
+
+   <div class="kartlar portfoy">
+
+  <div class="kart">
+    <img src="minecraft.png" alt="Minecraft Thumbnail">
+    <h3>Minecraft Thumbnail</h3>
+  </div>
+
+  <div class="kart">
+    <img src="valorant.png" alt="Valorant Thumbnail">
+    <h3>Valorant Thumbnail</h3>
+  </div>
+
+</div>
+  </section>
+
+  <section id="iletisim">
+    <h2>İletişim</h2>
+
+    <div class="kart">
+      <p>Bir proje için benimle iletişime geçebilirsin.</p>
+
+      <a class="btn" href="#">
+        İletişime Geç
+      </a>
+    </div>
+  </section>
+
+  <footer>
+    Benim Portföyüm
+  </footer>
+
+</body>
+</html>
