@@ -316,8 +316,8 @@
   <h2>📝 Sipariş Formu</h2>
 
   <div class="kart">
-   <form action="https://formspree.io/f/xeajdlae" method="POST">
-<input type="hidden" name="_next" value="https://napcn06-maker.github.io/cano-design/?gonderildi=1#siparis-formu">
+  <form id="siparisForm">
+
       <p>Adın:</p>
       <input type="text" name="Ad" required>
 
@@ -340,16 +340,38 @@
     </form>
   </div>
 </section>
-  <script>
-const params = new URLSearchParams(window.location.search);
+<script>
+const form = document.getElementById("siparisForm");
+const mesaj = document.getElementById("basariliMesaj");
 
-if (params.get("gonderildi") === "1") {
-  const mesaj = document.getElementById("basariliMesaj");
+form.addEventListener("submit", async function(event) {
+  event.preventDefault();
 
-  if (mesaj) {
+  const formData = new FormData(form);
+
+  try {
+    const cevap = await fetch("https://formspree.io/f/xeajdlae", {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (cevap.ok) {
+      mesaj.style.display = "block";
+      mesaj.innerHTML = "✅ Siparişin alındı! En kısa sürede dönüş yapılacak.";
+      form.reset();
+      mesaj.scrollIntoView({ behavior: "smooth" });
+    } else {
+      mesaj.style.display = "block";
+      mesaj.innerHTML = "❌ Sipariş gönderilemedi. Lütfen tekrar dene.";
+    }
+  } catch (hata) {
     mesaj.style.display = "block";
+    mesaj.innerHTML = "❌ Bağlantı hatası. Lütfen tekrar dene.";
   }
-}
+});
 </script>
 </body>
 </html>
