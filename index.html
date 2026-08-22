@@ -310,11 +310,14 @@
 </section>
   
   <section id="siparis-formu">
+    <div id="basariliMesaj" style="display:none; margin:20px; padding:15px; border-radius:10px; background:#171717; text-align:center;">
+  ✅ Siparişin alındı! En kısa sürede dönüş yapılacak.
+</div>
   <h2>📝 Sipariş Formu</h2>
 
   <div class="kart">
    <form action="https://formspree.io/f/xeajdlae" method="POST">
-
+<input type="hidden" name="_next" value="https://napcn06-maker.github.io/cano-design/?gonderildi=1#siparis-formu">
       <p>Adın:</p>
       <input type="text" name="Ad" required>
 
@@ -337,5 +340,16 @@
     </form>
   </div>
 </section>
+  <script>
+const params = new URLSearchParams(window.location.search);
+
+if (params.get("gonderildi") === "1") {
+  const mesaj = document.getElementById("basariliMesaj");
+
+  if (mesaj) {
+    mesaj.style.display = "block";
+  }
+}
+</script>
 </body>
 </html>
