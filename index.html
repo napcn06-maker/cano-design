@@ -138,6 +138,7 @@
       <a href="#portfoy">Portföy</a>
       <a href="#iletisim">İletişim</a>
       <a href="#fiyatlar">Fiyatlar</a>
+      <a href="#siparis-formu">Sipariş Formu</a>
     </div>
   </nav>
 
@@ -260,6 +261,35 @@
   📩 Sipariş Ver
 </a>
     </div>
+  </div>
+</section>
+  
+  <section id="siparis-formu">
+  <h2>📝 Sipariş Formu</h2>
+
+  <div class="kart">
+    <form action="mailto:napcn06@gmail.com" method="post" enctype="text/plain">
+
+      <p>Adın:</p>
+      <input type="text" name="Ad" required>
+
+      <p>E-posta:</p>
+      <input type="email" name="Email" required>
+
+      <p>Ne istiyorsun?</p>
+      <select name="Siparis">
+        <option>1 Thumbnail - 50 TL</option>
+        <option>3 Thumbnail - 120 TL</option>
+        <option>Basit Web Sitesi</option>
+      </select>
+
+      <p>Açıklama:</p>
+      <textarea name="Aciklama" rows="5"></textarea>
+
+      <br><br>
+      <button class="btn" type="submit">📩 Sipariş Gönder</button>
+
+    </form>
   </div>
 </section>
 </body>
